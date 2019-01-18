@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
           key: Math.random(),
           name: action.placeName,
           image: {
-            uri: ''
+            uri: 'https://hips.hearstapps.com/hbu.h-cdn.co/assets/17/23/halstatt-austria.jpg'
           }
         })
       }
@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
     case DELETE_PLACE:
       return {
         ...state,
-        places: prevState.places.filter(place => {
+        places: state.places.filter(place => {
           return place.key !== state.selectedPlace.key
         }),
         selectedPlace: null
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedPlace: state.places.find(place => {
-          return place.key === key
+          return place.key === action.placeKey
         })
       }
       break;
