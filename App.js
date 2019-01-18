@@ -32,11 +32,9 @@ class App extends Component {
 
   placeSelectedHandler = key => {
     this.props.onSelectPlace(key)
-    
   }
 
   render() {
-    
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Places</Text>
